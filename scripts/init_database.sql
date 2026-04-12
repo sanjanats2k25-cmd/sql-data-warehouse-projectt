@@ -18,6 +18,8 @@ USE master;
 GO
 
 -- Drop and recreate the 'DataWarehouse' database
+	--First check if the database aready exists , if so do this ,else continue with creating new one
+	
 IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'DataWarehouse')
 BEGIN
     ALTER DATABASE DataWarehouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
